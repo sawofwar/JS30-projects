@@ -9,7 +9,6 @@
 
     <div class="controls">
       <label for="spacing">Spacing:</label>
-      <!-- ⭐⭐⭐ cool input field -->
       <input
         id="spacing"
         type="range"
@@ -44,7 +43,7 @@
         --blur: 10px;
       }
 
-      /* ⭐ you can write a specific value for variable in the element <h2 style="--base: #FFF">"Update CSS Variables with "</h2> */
+      
 
       img {
         padding: var(--spacing);
@@ -80,28 +79,16 @@
 
     <script>
       const inputs = document.querySelectorAll(".controls input");
-      // ⭐ this is a node list, not an array
-      // ⭐ doesn't have the same methods as arrays do
+     
 
       function handleUpdate() {
-        // console.log(this.value);
-
-        // ⭐ what is the suffix of what we are working with?
-        // ⭐ additional info added to the input elements (data-sizing=px)
         const suffix = this.dataset.sizing || "";
-        console.log(suffix);
-        // ^ ⭐ read about this one
-        // data set is an object that will contain all the data attributes from that specific element (all the data-'s used on the element)
-        // ⭐ takes everything that has 'data-' on it and puts into an object
-
-        // ⭐ selecting css variable
         document.documentElement.style.setProperty(
           `--${this.name}`,
           this.value + suffix
         );
       }
 
-      // ⭐ read doc on this one
       inputs.forEach((input) => input.addEventListener("change", handleUpdate));
       inputs.forEach((input) =>
         input.addEventListener("mousemove", handleUpdate)
