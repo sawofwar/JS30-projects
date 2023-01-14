@@ -49,7 +49,7 @@
         height: 100%;
         transform: translateY(
           -3px
-        ); /* account for the height of the clock hands */
+        );
       }
 
       .hand {
@@ -58,13 +58,9 @@
         background: black;
         position: absolute;
         top: 50%;
-        /* ⭐ this is where the rotation starts */
-        /* ⭐ by default it's 50% */
         transform-origin: 100%;
         transform: rotate(90deg);
-        /* ⭐ transition for moving hand! */
         transition: all 0.05s;
-        /* ⭐ animation where it jerks little */
         transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
       }
 
@@ -99,8 +95,7 @@
         const secondsDegrees = (seconds / 60) * 360 + 90;
 
         secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
-        // ⭐ rotating degrees via the variable we created above
-        // + nice template literal!
+
 
         const minutes = now.getMinutes();
         const minutesDegrees = (minutes / 60) * 360 + 110;
@@ -112,7 +107,7 @@
         hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
       }
 
-      // ⭐⭐⭐ makes the function run every second!!!
+
       setInterval(setDate, 1000);
 
       console.log(new Date());
