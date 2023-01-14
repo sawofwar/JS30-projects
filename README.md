@@ -2,5 +2,6 @@
 
 Small projects from the JS30 course.
 
-- [x] Drum kit
+- [x] Drum Kit
 - [x] Clock 
+- [x] CSS Variables 
